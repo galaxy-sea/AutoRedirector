@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": " __MSG_extName__",
-  "version": "1.0",
+  "version": "2025.02.01.13.53",
   "description": "__MSG_extDescription__",
   "default_locale": "zh_CN",
   "action": {
@@ -22,10 +22,8 @@
     "128": "icons/icon128.png"
   },
   "permissions": [
-    "activeTab",
     "tabs",
-    "scripting",
-    "notifications"
+    "scripting"
   ],
   "host_permissions": [
     "*://weixin110.qq.com/*",
