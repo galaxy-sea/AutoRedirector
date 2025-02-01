@@ -1,3 +1,6 @@
+// 兼容 Chrome、FireFox、Edge API
+const browserAPI = typeof browser !== "undefined" ? browser : chrome;
+
 // 配置对象：每个 hostname 对应一个跳转规则
 const redirectMap = {
   // 常规操作
@@ -61,7 +64,6 @@ const redirectMap = {
   // 特殊的url
   "blog.51cto.com": {
     method: function (tabId, url, rule) {
-      debugger
       if (rule.path && !new URL(url).pathname.startsWith(rule.path)) {
         return;
       }
@@ -77,8 +79,7 @@ const defaultConfig = {
   param: ["target", "url", "q", "gourl", "u", "redirect", "toasturl", "link", "href"]
 };
 
-function handleRedirect(tabId, url) {
-  // debugger;
+async function handleRedirect(tabId, url) {
   const url_ = new URL(url);
   const hostname = url_.hostname;
   if (!redirectMap[hostname]) return;
@@ -89,7 +90,7 @@ function handleRedirect(tabId, url) {
   }
 }
 
-function redirectByUrl(tabId, url, rule) {
+async function redirectByUrl(tabId, url, rule) {
   const url_ = new URL(url);
   const pathname = url_.pathname;
   if (rule.path && !pathname.startsWith(rule.path)) {
@@ -98,36 +99,55 @@ function redirectByUrl(tabId, url, rule) {
   rule.param.forEach(param => {
     const target = url_.searchParams.get(param);
     if (target) {
-      chrome.tabs.update(tabId, { url: decodeURIComponent(target) });
+      browserAPI.tabs.update(tabId, { url: decodeURIComponent(target) });
     }
   });
 }
 
-function redirectByDocQuerySelector(tabId, url, rule) {
-  chrome.scripting.executeScript({
-    target: { tabId },
-    func: extractTargetFromHtml,
-    args: [rule.param]
-  });
+async function redirectByDocQuerySelector(tabId, url, rule) {
+  if (browserAPI.scripting && browserAPI.scripting.executeScript) {
+    // Chrome / Edge (MV3)
+    browserAPI.scripting.executeScript({
+      target: { tabId },
+      func: extractTargetFromHtml,
+      args: [rule.param]
+    }).catch(err => console.error("Execute script error:", err));
+  } else {
+    // FireFox / Edge (MV2)
+    browserAPI.tabs.executeScript(tabId, {
+      code: `(${extractTargetFromHtml})("${rule.param}")`
+    }).catch(err => console.error("Execute script error:", err));
+  }
 }
 
-function extractTargetFromHtml(param) {
-  // debugger;
+
+async function extractTargetFromHtml(param) {
   const targetElement = document.querySelector(param);
   if (targetElement) {
     window.location.href = targetElement.textContent.trim();
   }
 }
 
-chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+// https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/onUpdated
+// The status property will cycle through "loading" and "complete".
+const lastTabUrls = new Map();
+
+// 监听标签页更新事件
+browserAPI.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (changeInfo.status === 'complete' && tab.url) {
+    if (lastTabUrls.get(tabId) === tab.url) {
+      return;
+    }
+    lastTabUrls.set(tabId, tab.url);
     handleRedirect(tabId, tab.url);
   }
-  // chrome.runtime.reload();
 });
 
-chrome.runtime.onInstalled.addListener((details) => {
+// 监听插件安装事件
+browserAPI.runtime.onInstalled.addListener((details) => {
   if (details.reason === "install") {
-      chrome.tabs.create({ url: "./options.html" }); // 这里的 "welcome.html" 需要在插件的 `public` 目录下
+    if (browserAPI.tabs.create) {
+      browserAPI.tabs.create({ url: "./options.html" });
+    }
   }
 });

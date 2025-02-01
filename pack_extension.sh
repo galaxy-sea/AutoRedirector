@@ -4,7 +4,7 @@
 EXT_DIR=$(cd "$(dirname "$0")" && pwd)
 
 # 生成 YYYY.MM.DD.HH.MM 格式的时间戳
-VERSION=$(date +%y.%m%d.%H%M)  
+VERSION=$(date +%y.%-m%d.%-H%M)  
 
 # 颜色输出
 GREEN='\033[0;32m'
@@ -18,7 +18,7 @@ echo "1) Chrome"
 echo "2) Firefox"
 echo "3) Edge"
 echo "9) 删除打包文件"
-read -p "输入选项 (1/2/3/4): " BROWSER_CHOICE
+read -p "输入选项: " BROWSER_CHOICE
 
 # 定义打包函数
 pack_extension() {
@@ -74,7 +74,7 @@ case $BROWSER_CHOICE in
     delete_zip_file
     ;;  
   *)
-    echo -e "${RED}❌ 无效的选项！请重新运行脚本并输入 1 / 2 / 3 / 4。${NC}"
+    echo -e "${RED}❌ 无效的选项！请重新运行脚本并输入。${NC}"
     exit 1
     ;;
 esac
