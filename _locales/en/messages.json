@@ -1,0 +1,11 @@
+{
+    "extName": {
+      "message": "AutoRedirector",
+      "description": "The name of the extension"
+    },
+    "extDescription": {
+      "message": "Automatically bypass redirect pages and go directly to the target URL.",
+      "description": "Description of the extension"
+    }
+  }
+  

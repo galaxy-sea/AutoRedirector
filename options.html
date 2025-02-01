@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>插件设置</title>
+    <link rel="stylesheet" href="./simple.css">
+</head>
+
+<body>
+    <h2>AutoRedirector 是一款智能跳转插件，可自动绕过各大网站的中转链接，直接跳转到目标页面，提升浏览体验，减少不必要的等待和手动点击。支持 QQ、微信、CSDN、知乎、掘金、微博、豆瓣、LeetCode
+        等常见网站，智能解析 URL 或 HTML 页面中的真实目标链接，确保用户快速访问所需内容。</h2>
+    <div style="display: flex;">
+        <div style="display: inline-block">
+            <button id="openAllButton">点击打开全部跳转链接</button>
+            <ul id="domainList">
+
+            </ul>
+            <script src="background.js"></script>
+            <script src="options.js"></script>
+        </div>
+
+        <div style="display: inline-block;">
+            <button id="openOptions">打开测试网页</button>
+            <button>新的中转链接反馈 或 bug反馈</button>
+            <p></p>
+            <h3 class="rainbow">善良的好人们，行行好施舍点银子给我买包烟吧，一块两块不嫌少三块四块会更好，赠人香烟手有余香。——by：爱抽烟的人</h3>
+            <p></p>
+            <image width="200" height="300" style="display: inline-block" src="images/WeChatPay.png"></image>
+            <image width="200" height="300" style="display: inline-block" src="images/AliPay.png"></image>
+            <script src="popup.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>
