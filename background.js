@@ -37,6 +37,7 @@ const redirectMap = {
   "www.qcc.com": { path: "/web/transfer-link", testHref: "https://www.qcc.com/web/transfer-link?link=https://github.com/galaxy-sea/AutoRedirector" },
   "www.yuque.com": { path: "/r/goto", testHref: "https://www.yuque.com/r/goto?url=https://github.com/galaxy-sea/AutoRedirector" },
   "xie.infoq.cn": { path: "/link", testHref: "https://xie.infoq.cn/link?target=https://github.com/galaxy-sea/AutoRedirector" },
+  "www.infoq.cn": { path: "/link", testHref: "https://www.infoq.cn/link?target=https%3A%2F%2Fgithub.com%2Fgalaxy-sea%2FAutoRedirector" },
   "www.baike.com": { path: "/redirect_link", testHref: "https://www.baike.com/redirect_link?url=https://github.com/galaxy-sea/AutoRedirector" },
   "developers.weixin.qq.com": { path: "/community/middlepage/href", testHref: "https://developers.weixin.qq.com/community/middlepage/href?href=https://github.com/galaxy-sea/AutoRedirector" },
   "developer.aliyun.com": { path: "/redirect", testHref: "https://developer.aliyun.com/redirect?target=https://github.com/galaxy-sea/AutoRedirector" },

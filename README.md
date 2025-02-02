@@ -2,6 +2,12 @@
 AutoRedirector 是一款智能跳转插件，可自动绕过各大网站的中转链接，直接跳转到目标页面，提升浏览体验，减少不必要的等待和手动点击。支持 QQ、微信、CSDN、知乎、掘金、微博、豆瓣、LeetCode 等常见网站，智能解析 URL 或 HTML 页面中的真实目标链接，确保用户快速访问所需内容。
 
 
+# 插件下载
+- Google Chrome：插件审核中
+- Mozilla Firefox：插件审核中
+- Microsoft Edge：插件审核中
+- Apple Safari：一年99美元算了，不想支持
+
 # 支持的网站列表
 <ul id="domainList">
     <li><a target="_blank" href="https://link.juejin.cn/?target=https://github.com/galaxy-sea/AutoRedirector">link.juejin.cn</a></li>
