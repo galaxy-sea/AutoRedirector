@@ -2,7 +2,6 @@
 AutoRedirector 是一款智能跳转插件，可自动绕过各大网站的中转链接，直接跳转到目标页面，提升浏览体验，减少不必要的等待和手动点击。支持 QQ、微信、CSDN、知乎、掘金、微博、豆瓣、LeetCode 等常见网站，智能解析 URL 或 HTML 页面中的真实目标链接，确保用户快速访问所需内容。
 
 
-
 # 支持的网站列表
 <ul id="domainList">
     <li><a target="_blank" href="https://link.juejin.cn/?target=https://github.com/galaxy-sea/AutoRedirector">link.juejin.cn</a></li>
@@ -44,6 +43,20 @@ AutoRedirector 是一款智能跳转插件，可自动绕过各大网站的中�
     <li><a target="_blank" href="https://jump.bdimg.com/safecheck/index?url=rN3wPs8te/r8jfr8YhogjfUWFoMgIRa8GuuBEpJ4eXO8AVsA2UkOV3OnAP38RLqgULlfrX2wNBE1ktsrhFGRdsUnCWH/dTBt0QiPKJTx1xte4mm563atJ0xgEMHDBR4XX1D3A8ieh9f3k7PccYSctkS252zuL3Y0uEoxzfbVtSg=">jump.bdimg.com</a></li>
     <li><a target="_blank" href="https://blog.51cto.com/transfer?https://github.com/galaxy-sea/AutoRedirector">blog.51cto.com</a></li>
 </ul>
+
+# 自行编译
+运行项目根目录的`pack_extension.sh`既可以编译为对应浏览器的插件文件。
+
+```sh
+AutoRedirector % sh pack_extension.sh
+请选择要打包的插件类型：
+0) 全部打包
+1) Chrome
+2) Firefox
+3) Edge
+9) 删除打包文件
+输入选项: 
+```
 
 # Thank you
 <a href="https://www.flaticon.com/free-icon/shuffle_1000607?term=redirect&related_id=1000607" title="random icons">Random icons created by Freepik - Flaticon</a>
