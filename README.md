@@ -3,8 +3,14 @@ AutoRedirector 是一款智能跳转插件，可自动绕过各大网站的中�
 
 
 # 插件下载
+> 点击图标进入插件中心下载
+<!-- <a href=""><img src="./doc/Google_Chrome_icon_(February_2022).svg" width="48" height="48"></a> -->
+<a href="https://addons.mozilla.org/zh-CN/firefox/addon/autoredirector/"><img src="./doc/Firefox_logo,_2019.svg" width="48" height="48"></a>
+<!-- <a href=""><img src="./doc/Microsoft_Edge_logo_(2019).svg" width="48" height="48"></a> -->
+
+
 - Google Chrome：插件审核中
-- Mozilla Firefox：插件审核中
+- Mozilla Firefox：已上架
 - Microsoft Edge：插件审核中
 - Apple Safari：一年99美元算了，不想支持
 
