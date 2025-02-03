@@ -41,6 +41,7 @@ const redirectMap = {
   "www.baike.com": { path: "/redirect_link", testHref: "https://www.baike.com/redirect_link?url=https://github.com/galaxy-sea/AutoRedirector" },
   "developers.weixin.qq.com": { path: "/community/middlepage/href", testHref: "https://developers.weixin.qq.com/community/middlepage/href?href=https://github.com/galaxy-sea/AutoRedirector" },
   "developer.aliyun.com": { path: "/redirect", testHref: "https://developer.aliyun.com/redirect?target=https://github.com/galaxy-sea/AutoRedirector" },
+  "www.kdocs.cn": { path: "/office/link", testHref: "https://www.kdocs.cn/office/link?target=https://github.com/galaxy-sea/AutoRedirector" },
   // "1111111": { path: "/111111", testHref: "" },
 
 
