@@ -4,12 +4,7 @@
 EXT_DIR=$(cd "$(dirname "$0")" && pwd)
 
 # 生成 YYYY.MM.DD.HH.MM 格式的时间戳
-hour=$(date +%-H)
-if [ "$hour" -eq 0 ]; then
-    VERSION=$(date +%y.%-m%d.%-H%M)
-else
-    VERSION=$(date +%y.%-m%d.%-H%M)
-fi
+VERSION=$(date +%y.%-m%d.1%H%M)
 
 
 # 颜色输出
