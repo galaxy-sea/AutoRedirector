@@ -5,14 +5,8 @@ AutoRedirector 是一款智能跳转插件，可自动绕过各大网站的中�
 # 插件下载
 > 点击图标进入插件中心下载
 
-<a href="https://chromewebstore.google.com/detail/msgextname/mljkchjjbfkoeailgiokkooffmbkpmog"><img src="./doc/Google_Chrome_icon_(February_2022).svg" width="48" height="48"></a><a href="https://addons.mozilla.org/zh-CN/firefox/addon/autoredirector/"><img src="./doc/Firefox_logo,_2019.svg" width="48" height="48"></a>
-<!-- <a href=""><img src="./doc/Microsoft_Edge_logo_(2019).svg" width="48" height="48"></a> -->
+<a href="https://chromewebstore.google.com/detail/msgextname/mljkchjjbfkoeailgiokkooffmbkpmog"><img src="./doc/Google_Chrome_icon_(February_2022).svg" width="64" height="64"></a><a href="https://addons.mozilla.org/zh-CN/firefox/addon/autoredirector/"><img src="./doc/Firefox_logo,_2019.svg" width="64" height="64"></a><a href="https://microsoftedge.microsoft.com/addons/detail/%E8%87%AA%E5%8A%A8%E8%B7%B3%E8%BD%AC%E5%99%A8/miklhhhlhdpmbnjmleenigbdckghkjfa"><img src="./doc/Microsoft_Edge_logo_(2019).svg" width="64" height="64"></a>
 
-
-- Google Chrome：已上架
-- Mozilla Firefox：已上架
-- Microsoft Edge：插件审核中
-- Apple Safari：一年99美元算了，不想支持
 
 # 支持的网站列表
 <ul id="domainList">
