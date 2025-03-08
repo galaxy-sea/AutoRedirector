@@ -40,7 +40,7 @@ pack_extension() {
   sed -i '' "s/\"version\": *\"[0-9\.]*\"/\"version\": \"$VERSION\"/" "$EXT_DIR/manifest.json"
 
   # 开始打包 ZIP（排除不必要文件）
-  zip -r "$ZIP_NAME" . -x "*.zip" "node_modules/*" ".git/*" "doc/*" ".DS_Store" "pack_extension.sh"
+  zip -r "$ZIP_NAME" . -x "*.zip" "node_modules/*" ".git/*" ".DS_Store" ".github/*" ".vscode/*" ".cache/*" "doc/*"  ".gitignore" "pack_extension.sh"
 
   # 结果输出
   if [ -f "$ZIP_NAME" ]; then
