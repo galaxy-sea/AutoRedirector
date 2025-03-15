@@ -28,7 +28,8 @@
   "host_permissions": [
     "*://weixin110.qq.com/*",
     "*://t.cn/*",
-    "*://jump.bdimg.com/*"
+    "*://jump.bdimg.com/*",
+    "*://jump2.bdimg.com/*"
   ],
   "options_page": "options.html",
   "background": {

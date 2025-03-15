@@ -64,6 +64,11 @@ const redirectMap = {
     param: "body > div > div.warning_info > p.link",
     testHref: "https://jump.bdimg.com/safecheck/index?url=rN3wPs8te/r8jfr8YhogjfUWFoMgIRa8GuuBEpJ4eXO8AVsA2UkOV3OnAP38RLqgULlfrX2wNBE1ktsrhFGRdsUnCWH/dTBt0QiPKJTx1xte4mm563atJ0xgEMHDBR4XX1D3A8ieh9f3k7PccYSctkS252zuL3Y0uEoxzfbVtSg="
   },
+  "jump2.bdimg.com": {
+    method: redirectByDocQuerySelector,
+    param: "body > div > div.warning_info > p.link",
+    testHref: "https://jump.bdimg.com/safecheck/index?url=rN3wPs8te/r8jfr8YhogjfUWFoMgIRa8GuuBEpJ4eXO8AVsA2UkOV3OnAP38RLqgULlfrX2wNBE1ktsrhFGRdsUnCWH/dTBt0QiPKJTx1xte4mm563atJ0xgEMHDBR4XX1D3A8ieh9f3k7PccYSctkS252zuL3Y0uEoxzfbVtSg="
+  },
 
   // 特殊的url
   "blog.51cto.com": {
@@ -80,7 +85,7 @@ const redirectMap = {
 
 const defaultConfig = {
   method: redirectByUrl,
-  param: ["target", "url", "q", "gourl", "u", "redirect", "toasturl", "link", "href"]
+  param: ["target", "url", "q", "gourl", "u", "redirect", "toasturl", "link", "href", "pfurl"]
 };
 
 async function handleRedirect(tabId, url) {
