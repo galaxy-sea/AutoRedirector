@@ -10,6 +10,7 @@ const redirectMap = {
   "c.pc.qq.com": { testHref: "https://c.pc.qq.com/pc.html?url=https://github.com/galaxy-sea/AutoRedirector" },
   "hd.nowcoder.com": { testHref: "https://hd.nowcoder.com/link.html?target=https://github.com/galaxy-sea/AutoRedirector" },
   "link.uisdc.com": { testHref: "https://link.uisdc.com/?redirect=https://github.com/galaxy-sea/AutoRedirector" },
+  "link.gitcode.com": { testHref: "https://link.gitcode.com/?target=https://pan.baidu.com/s/1inUf78Arw9prA-Q4-zpdPQ" },
 
   // 需要判断域名和路径
   "www.jianshu.com": { path: "/go-wild", testHref: "https://www.jianshu.com/go-wild?ac=2&url=https://github.com/galaxy-sea/AutoRedirector" },
