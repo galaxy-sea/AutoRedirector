@@ -11,6 +11,7 @@ const redirectMap = {
   "hd.nowcoder.com": { testHref: "https://hd.nowcoder.com/link.html?target=https://github.com/galaxy-sea/AutoRedirector" },
   "link.uisdc.com": { testHref: "https://link.uisdc.com/?redirect=https://github.com/galaxy-sea/AutoRedirector" },
   "link.gitcode.com": { testHref: "https://link.gitcode.com/?target=https://pan.baidu.com/s/1inUf78Arw9prA-Q4-zpdPQ" },
+  "open.work.weixin.qq.com": { testHref: "https://open.work.weixin.qq.com/wwopen/uriconfirm?uri=https://github.com/galaxy-sea/AutoRedirector" },
 
   // 需要判断域名和路径
   "www.jianshu.com": { path: "/go-wild", testHref: "https://www.jianshu.com/go-wild?ac=2&url=https://github.com/galaxy-sea/AutoRedirector" },
@@ -86,7 +87,7 @@ const redirectMap = {
 
 const defaultConfig = {
   method: redirectByUrl,
-  param: ["target", "url", "q", "gourl", "u", "redirect", "toasturl", "link", "href", "pfurl"]
+  param: ["target", "url", "q", "gourl", "u", "redirect", "toasturl", "link", "href", "pfurl","uri"]
 };
 
 async function handleRedirect(tabId, url) {
