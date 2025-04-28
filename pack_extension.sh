@@ -40,7 +40,7 @@ pack_extension() {
   sed -i '' "s/\"version\": *\"[0-9\.]*\"/\"version\": \"$VERSION\"/" "$EXT_DIR/manifest.json"
 
   # 开始打包 ZIP（排除不必要文件）
-  zip -r "$ZIP_NAME" . -x "*.zip" "node_modules/*" ".git/*" ".DS_Store" ".github/*" ".vscode/*" ".cache/*" "doc/*"  ".gitignore" "pack_extension.sh"
+  zip -r "$ZIP_NAME" . -x "*.zip" "node_modules/*" ".git/*" ".DS_Store" ".github/*" ".vscode/*" "..idea/*" ".cache/*" "doc/*"  ".gitignore" "pack_extension.sh"
 
   # 结果输出
   if [ -f "$ZIP_NAME" ]; then
@@ -73,7 +73,7 @@ case $BROWSER_CHOICE in
     ;;
   9)
     delete_zip_file
-    ;;  
+    ;;
   *)
     echo -e "${RED}❌ 无效的选项！请重新运行脚本并输入。${NC}"
     exit 1
