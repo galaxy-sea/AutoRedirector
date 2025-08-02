@@ -17,7 +17,7 @@ const redirectMap = {
   "www.jianshu.com": { path: "/go-wild", testHref: "https://www.jianshu.com/go-wild?ac=2&url=https://github.com/galaxy-sea/AutoRedirector" },
   "www.douban.com": { path: "/link2", testHref: "https://www.douban.com/link2/?url=https://github.com/galaxy-sea/AutoRedirector" },
   "steamcommunity.com": { path: "/linkfilter", testHref: "https://steamcommunity.com/linkfilter/?url=https://github.com/galaxy-sea/AutoRedirector" },
-  "www.tianyancha.com": { path: "/security", testHref: "https://www.tianyancha.com/security?target=http://github.com/galaxy-sea" },
+  "www.tianyancha.com": { path: "/security", testHref: "https://www.tianyancha.com/security?target=https://github.com/galaxy-sea" },
   "game.bilibili.com": { path: "/linkfilter", testHref: "https://game.bilibili.com/linkfilter/?url=https://github.com/galaxy-sea/AutoRedirector" },
   "www.chinaz.com": { path: "/go.shtml", testHref: "https://www.chinaz.com/go.shtml?url=https://github.com/galaxy-sea/AutoRedirector" },
   "www.youtube.com": { path: "/redirect", testHref: "https://www.youtube.com/redirect?q=https://github.com/galaxy-sea/AutoRedirector" },
