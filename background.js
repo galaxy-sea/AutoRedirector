@@ -47,6 +47,7 @@ const redirectMap = {
   "dalao.ru": { path: "/link", testHref: "https://dalao.ru/link/?target=https://github.com/galaxy-sea/AutoRedirector" },
   "wx.mail.qq.com": { path: "/xmspamcheck/xmsafejump", testHref: "https://wx.mail.qq.com/xmspamcheck/xmsafejump?url=https://github.com/galaxy-sea/AutoRedirector" },
   "aiqicha.baidu.com": { path: "/safetip", testHref: "https://aiqicha.baidu.com/safetip?target=https://github.com/galaxy-sea/AutoRedirector" },
+  "forum.mczwlt.net": { path: "/outgoing", testHref: "https://forum.mczwlt.net/outgoing?url=https://github.com/galaxy-sea/AutoRedirector" },
   // "1111111": { path: "/111111", testHref: "" },
 
 
