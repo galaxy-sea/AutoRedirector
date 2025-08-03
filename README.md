@@ -8,7 +8,7 @@ AutoRedirector 是一款智能跳转插件，可自动绕过各大网站的中�
 <a href="https://chromewebstore.google.com/detail/mljkchjjbfkoeailgiokkooffmbkpmog"><img src="./doc/Google_Chrome_icon_(February_2022).svg" width="64" height="64"></a><a href="https://addons.mozilla.org/firefox/addon/autoredirector/"><img src="./doc/Firefox_logo,_2019.svg" width="64" height="64"></a><a href="https://microsoftedge.microsoft.com/addons/detail/miklhhhlhdpmbnjmleenigbdckghkjfa"><img src="./doc/Microsoft_Edge_logo_(2019).svg" width="64" height="64"></a>
 
 [![Chrome Web Store Version](https://img.shields.io/chrome-web-store/v/mljkchjjbfkoeailgiokkooffmbkpmog?style=flat-square)](https://chromewebstore.google.com/detail/mljkchjjbfkoeailgiokkooffmbkpmog)
-[![Mozilla Add-on Version](https://img.shields.io/amo/v/autoredirector?style=flat-squar)](https://addons.mozilla.org/firefox/addon/autoredirector/)
+[![Mozilla Add-on Version](https://img.shields.io/amo/v/autoredirector?style=flat-square)](https://addons.mozilla.org/firefox/addon/autoredirector/)
 [![Edge Add-on Version](https://img.shields.io/badge/dynamic/json?label=edge%20add-on&prefix=v&query=%24.version&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fmiklhhhlhdpmbnjmleenigbdckghkjfa&style=flat-square)](https://microsoftedge.microsoft.com/addons/detail/miklhhhlhdpmbnjmleenigbdckghkjfa)
 
 # 支持的网站列表
