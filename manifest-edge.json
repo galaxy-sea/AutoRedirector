@@ -29,7 +29,8 @@
     "*://weixin110.qq.com/*",
     "*://t.cn/*",
     "*://jump.bdimg.com/*",
-    "*://jump2.bdimg.com/*"
+    "*://jump2.bdimg.com/*",
+    "*://baike.baidu.com/reference/*"
   ],
   "options_page": "options.html",
   "background": {

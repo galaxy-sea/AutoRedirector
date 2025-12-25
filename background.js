@@ -74,6 +74,16 @@ const redirectMap = {
     param: "body > div > div.warning_info > p.link",
     testHref: "https://jump.bdimg.com/safecheck/index?url=rN3wPs8te/r8jfr8YhogjfUWFoMgIRa8GuuBEpJ4eXO8AVsA2UkOV3OnAP38RLqgULlfrX2wNBE1ktsrhFGRdsUnCWH/dTBt0QiPKJTx1xte4mm563atJ0xgEMHDBR4XX1D3A8ieh9f3k7PccYSctkS252zuL3Y0uEoxzfbVtSg="
   },
+  "baike.baidu.com": {
+    path: "/reference",
+    method: redirectByDocQuerySelector,
+    param: "#root > div > div > div > a > strong",
+    sleep: 1000,
+    testHref: "https://baike.baidu.com/reference/124767/533aYdO6cr3_z3kATPHdnfn3ZnrHYoitt7bQUbdzzqIPmGapB4P1FJ836c828Ll2BUXIv5Utc5kRpM-kdy4cupBZLLxVE7REzxKiLWeV"
+  },
+
+  // 需要从html中解析出来
+  // manifest.json 文件添加一下白名单哦。
 
   // 特殊的url
   "blog.51cto.com": {
@@ -105,11 +115,8 @@ async function handleRedirect(tabId, url) {
 }
 
 async function redirectByUrl(tabId, url, rule) {
-  const url_ = new URL(url);
-  const pathname = url_.pathname;
-  if (rule.path && !pathname.startsWith(rule.path)) {
-    return;
-  }
+  const url_ = await precheckAndSleep(url, rule);
+  if (!url_) return;
   rule.param.forEach(param => {
     const target = url_.searchParams.get(param);
     if (target) {
@@ -119,6 +126,8 @@ async function redirectByUrl(tabId, url, rule) {
 }
 
 async function redirectByDocQuerySelector(tabId, url, rule) {
+  const url_ = await precheckAndSleep(url, rule);
+  if (!url_) return;
   if (browserAPI.scripting && browserAPI.scripting.executeScript) {
     // Chrome / Edge (MV3)
     browserAPI.scripting.executeScript({
@@ -134,12 +143,23 @@ async function redirectByDocQuerySelector(tabId, url, rule) {
   }
 }
 
-
 async function extractTargetFromHtml(param) {
   const targetElement = document.querySelector(param);
   if (targetElement) {
     window.location.href = targetElement.textContent.trim();
   }
+}
+
+async function precheckAndSleep(url, rule) {
+  const url_ = new URL(url);
+  const pathname = url_.pathname;
+  if (rule.path && !pathname.startsWith(rule.path)) {
+    return null;
+  }
+  if (rule.sleep) {
+    await new Promise(r => setTimeout(r, rule.sleep));
+  }
+  return url_;
 }
 
 // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/onUpdated
