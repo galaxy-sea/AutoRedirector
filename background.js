@@ -49,6 +49,7 @@ const redirectMap = {
   "aiqicha.baidu.com": { path: "/safetip", testHref: "https://aiqicha.baidu.com/safetip?target=https://github.com/galaxy-sea/AutoRedirector" },
   "forum.mczwlt.net": { path: "/outgoing", testHref: "https://forum.mczwlt.net/outgoing?url=https://github.com/galaxy-sea/AutoRedirector" },
   "oshwhub.com": { path: "/link", testHref: "https://oshwhub.com/link?target=https://github.com/galaxy-sea/AutoRedirector" },
+  "help.aliyun.com": { path: "/redirect", testHref: "https://help.aliyun.com/redirect?targetUrl=https://github.com/galaxy-sea/AutoRedirector" },
   // "1111111": { path: "/111111", testHref: "" },
 
 
@@ -100,7 +101,7 @@ const redirectMap = {
 
 const defaultConfig = {
   method: redirectByUrl,
-  param: ["target", "url", "q", "gourl", "u", "redirect", "toasturl", "link", "href", "pfurl","uri"]
+  param: ["target", "url", "q", "gourl", "u", "redirect", "toasturl", "link", "href", "pfurl", "uri", "targetUrl"],
 };
 
 async function handleRedirect(tabId, url) {
