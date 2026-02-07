@@ -50,6 +50,7 @@ const redirectMap = {
   "forum.mczwlt.net": { path: "/outgoing", testHref: "https://forum.mczwlt.net/outgoing?url=https://github.com/galaxy-sea/AutoRedirector" },
   "oshwhub.com": { path: "/link", testHref: "https://oshwhub.com/link?target=https://github.com/galaxy-sea/AutoRedirector" },
   "help.aliyun.com": { path: "/redirect", testHref: "https://help.aliyun.com/redirect?targetUrl=https://github.com/galaxy-sea/AutoRedirector" },
+  "cnb.cool": { path: "/110", testHref: "https://cnb.cool/110?url=https%3A%2F%2Fdocs.github.com%2Fzh%2Frest%2Fauthentication%2Fauthenticating-to-the-rest-api" },
   // "1111111": { path: "/111111", testHref: "" },
 
 
@@ -57,7 +58,7 @@ const redirectMap = {
   // manifest.json 文件添加一下白名单哦。
   "weixin110.qq.com": {
     method: redirectByDocQuerySelector,
-    param: "body > div > div.weui-msg__text-area > p",
+    param: ".weui-msg__text-area .ui-ellpisis-content p, .weui-msg__text-area > p.weui-msg__desc[xpath=\"1\"]",
     testHref: "https://weixin110.qq.com/cgi-bin/mmspamsupport-bin/newredirectconfirmcgi?click=94e70da48e938d0145086c1c99a2ad71&bankey=1b60392a82c1f670f6c089ddc17234ba&midpagecode=e2faa0ee03e19e6efecf869b7f9ca0522c68d4854df6fbfa04376e4e5a76fb68051eaf8948fea39790a1cd7df4a64a26&bancode=2399cb39b79374a740f5d35881d294a89c5943a7ad8c941bad626d61c0fcf52d"
   },
   "t.cn": {
