@@ -58,8 +58,9 @@ const redirectMap = {
   // manifest.json 文件添加一下白名单哦。
   "weixin110.qq.com": {
     method: redirectByDocQuerySelector,
-    param: ".weui-msg__text-area .ui-ellpisis-content p, .weui-msg__text-area > p.weui-msg__desc[xpath=\"1\"]",
+    param: ["body > div > div.weui-msg__text-area > p","body > div > div.weui-msg__text-area > div > div > div:nth-child(1) > p"],
     testHref: "https://weixin110.qq.com/cgi-bin/mmspamsupport-bin/newredirectconfirmcgi?click=94e70da48e938d0145086c1c99a2ad71&bankey=1b60392a82c1f670f6c089ddc17234ba&midpagecode=e2faa0ee03e19e6efecf869b7f9ca0522c68d4854df6fbfa04376e4e5a76fb68051eaf8948fea39790a1cd7df4a64a26&bancode=2399cb39b79374a740f5d35881d294a89c5943a7ad8c941bad626d61c0fcf52d"
+    // testHref: "https://weixin110.qq.com/cgi-bin/mmspamsupport-bin/newredirectconfirmcgi?click=94e70da48e938d0145086c1c99a2ad71&bankey=da195cdff2a20d78c281fd850f62d36f&midpagecode=67377a2adb44e17c1b0adb24b5cf2bd17d54f6305ef3b6871f1723a4869f23752efd30768fd6ba8c4a71fcb6003839950062e14eaa2b6c3ed741c8e9579694bf8da25a1773d1c3784215a668262465053d76e57594420d116104fd30314a2f4e3c2ae4ba88df29a197536196ce5810f4059073a9b35152d7c121a85e2a4e8ec0&bancode=4103584be4dce4568a190067f2ff3e7feea9411c76186c179f74b75a865d5b64#wechat_redirect"
   },
   "t.cn": {
     method: redirectByDocQuerySelector,
@@ -140,15 +141,40 @@ async function redirectByDocQuerySelector(tabId, url, rule) {
   } else {
     // FireFox / Edge (MV2)
     browserAPI.tabs.executeScript(tabId, {
-      code: `(${extractTargetFromHtml})("${rule.param}")`
+      code: `(${extractTargetFromHtml})(${JSON.stringify(rule.param)})`
     }).catch(err => console.error("Execute script error:", err));
   }
 }
 
 async function extractTargetFromHtml(param) {
-  const targetElement = document.querySelector(param);
-  if (targetElement) {
-    window.location.href = targetElement.textContent.trim();
+  const params = Array.isArray(param) ? param : [param];
+  for (const selector of params) {
+    if (typeof selector !== "string" || !selector.trim()) {
+      continue;
+    }
+    let targetElement = null;
+    try {
+      targetElement = document.querySelector(selector);
+    } catch (err) {
+      continue;
+    }
+    if (targetElement) {
+      const rawUrl = (targetElement.textContent || "").trim();
+      if (!rawUrl) {
+        continue;
+      }
+      let parsedUrl = null;
+      try {
+        parsedUrl = new URL(rawUrl);
+      } catch (err) {
+        continue;
+      }
+      if (!/^[a-zA-Z][a-zA-Z0-9+.-]*:$/.test(parsedUrl.protocol)) {
+        continue;
+      }
+      window.location.href = parsedUrl.href;
+      return;
+    }
   }
 }
 
