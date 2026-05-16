@@ -17,7 +17,6 @@ echo "请选择要打包的插件类型："
 echo "0) 全部打包"
 echo "1) Chrome"
 echo "2) Firefox"
-echo "3) Edge"
 echo "9) 删除打包文件"
 read -p "输入选项: " BROWSER_CHOICE
 
@@ -40,7 +39,7 @@ pack_extension() {
   sed -i '' "s/\"version\": *\"[0-9\.]*\"/\"version\": \"$VERSION\"/" "$EXT_DIR/manifest.json"
 
   # 开始打包 ZIP（排除不必要文件）
-  zip -r "$ZIP_NAME" . -x "*.zip" "node_modules/*" ".git/*" ".DS_Store" ".github/*" ".vscode/*" "..idea/*" ".cache/*" "doc/*"  ".gitignore" "pack_extension.sh"
+  zip -r "$ZIP_NAME" . -x "*.zip" "node_modules/*" ".git/*" ".DS_Store" ".github/*" ".vscode/*" ".idea/*" ".cache/*" "doc/*" ".gitignore" "pack_extension.sh"
 
   # 结果输出
   if [ -f "$ZIP_NAME" ]; then
@@ -51,7 +50,7 @@ pack_extension() {
 }
 
 delete_zip_file() {
-  rm extension_Chrome.zip extension_Edge.zip extension_Firefox.zip manifest.json
+  rm extension_Chrome.zip extension_Firefox.zip manifest.json
 }
 
 # 根据用户选择执行打包
@@ -60,16 +59,12 @@ case $BROWSER_CHOICE in
     echo "🔄 开始打包所有浏览器插件..."
     pack_extension "Chrome" "manifest-chrome.json"
     pack_extension "Firefox" "manifest-firefox.json"
-    pack_extension "Edge" "manifest-edge.json"
     ;;
   1)
     pack_extension "Chrome" "manifest-chrome.json"
     ;;
   2)
     pack_extension "Firefox" "manifest-firefox.json"
-    ;;
-  3)
-    pack_extension "Edge" "manifest-edge.json"
     ;;
   9)
     delete_zip_file
