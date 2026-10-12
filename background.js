@@ -50,7 +50,8 @@ const redirectMap = {
   "forum.mczwlt.net": { path: "/outgoing", testHref: "https://forum.mczwlt.net/outgoing?url=https://github.com/galaxy-sea/AutoRedirector" },
   "oshwhub.com": { path: "/link", testHref: "https://oshwhub.com/link?target=https://github.com/galaxy-sea/AutoRedirector" },
   "help.aliyun.com": { path: "/redirect", testHref: "https://help.aliyun.com/redirect?targetUrl=https://github.com/galaxy-sea/AutoRedirector" },
-  "cnb.cool": { path: "/110", testHref: "https://cnb.cool/110?url=https%3A%2F%2Fdocs.github.com%2Fzh%2Frest%2Fauthentication%2Fauthenticating-to-the-rest-api" },
+  "cnb.cool": { path: "/110", testHref: "https://cnb.cool/110?url=https://github.com/galaxy-sea/AutoRedirector" },
+  "zhidao.baidu.com": { path: "/question/hx/interstitial", testHref: "https://zhidao.baidu.com/question/hx/interstitial?url=https://github.com/galaxy-sea/AutoRedirecto" },
   // "1111111": { path: "/111111", testHref: "" },
 
 
